@@ -93,7 +93,10 @@ class KernelDetector:
                     kernel["inputh"] = input_shape[0][1]
                     kernel["inputw"] = input_shape[0][2]
                 kernel["cin"] = input_shape[0][-1]
-
+            elif len(input_shape[0]) == 3:
+                    kernel["inputh"] = input_shape[0][1]
+                    kernel["inputw"] = input_shape[0][2]
+                kernel["cin"] = input_shape[0][-1]
             if len(output_shape) == 1:
                 kernel["cout"] = output_shape[0][-1]
             elif len(output_shape) > 1:
